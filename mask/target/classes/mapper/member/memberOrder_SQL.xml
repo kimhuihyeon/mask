@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="memberGoodsOrder">
+ 
+ 	<select id="selectMemberInfo" resultType="hashmap" parameterType="hashmap">
+ 		SELECT MEM_NAME , MEM_PHONE, MEM_ZIPCODE, MEM_ADDRESS1, MEM_ADDRESS2
+		FROM MEMBER
+		WHERE MEM_NUM=#{MEM_NUM}
+ 	</select>
+ 
+ 	<select id="goodsSelect" resultType="hashmap" parameterType="hashmap">
+ 		SELECT GOODS_NAME, GOODS_PRICE, GOODS_IMAGE FROM GOODS
+		WHERE GOODS_NAME=#{GOODS_NAME}
+ 	</select>
+ 	
+ 	<select id="goodsCategorySelect" resultType="hashmap" parameterType="hashmap">
+ 		SELECT GOODS_CATEGORY FROM GOODS_ATTRIBUTE ga WHERE goods_name=#{GOODS_NAME} 
+ 	</select>
+ 	
+ 	<insert id="goodsOrderInsert" parameterType="hashmap">
+ 		<selectKey keyProperty="IDX" resultType="string" order="BEFORE">
+ 			select mk_order_seq.nextval from dual
+ 		</selectKey>
+ 		
+	INSERT INTO MK_ORDER VALUES(#{IDX},#{MEM_NUM},#{ORDER_NAME},#{ORDER_USER_NAME},#{ORDER_PHONE},sysdate,#{ORDER_PRICE},#{ORDER_DCOST},#{ORDER_TCOST},#{ORDER_DZIPCODE},#{ORDER_DADD1},#{ORDER_DADD2},nvl(#{ORDER_DMEMO},' '),#{ORDER_PAY},#{ORDER_PAY_NAME},nvl(#{ORDER_PAY_CASHRE},' '),#{GOODS_AMOUNT},#{ORDER_PAY_RBANK} )
+ 		
+ 	</insert>
+ 	
+ 	<insert id="insertCart" parameterType="hashmap">
+ 		INSERT INTO GOODS_BASKET (GOODS_BASKET_NUM , MEM_NUM, GOODS_NUM, GOODS_AMOUNT, ORDER_NUM , AORDER_STATE , GOODS_CATEGORY , TCOST )
+    	VALUES(GOODS_BASKET_SEQ.nextval, #{MEM_NUM},#{orderNumber},#{GOODS_AMOUNT},#{IDX},'결제완료',#{GOODS_CATEGORY},#{ORDER_TCOST})
+ 	</insert>
+ 	
+ 	<insert id="insert_admin_order">
+ 		INSERT INTO ADMIN_ORDER (ORDER_NUM, MEM_NUM, AORDER_STATE) values(#{IDX},#{MEM_NUM},'결제완료')
+ 	</insert>
+ 	
+ 	<update id="goodsBasketOrderInsert" parameterType="hashmap">
+ 		UPDATE GOODS_BASKET SET ORDER_NUM=#{IDX} WHERE AORDER_STATE IS NULL
+ 	</update>
+ 	
+ 	<update id="goodsBasketStateUpdate" parameterType="hashmap">
+ 		UPDATE GOODS_BASKET SET AORDER_STATE='결제완료' WHERE ORDER_NUM=#{IDX}
+ 	</update>
+ 	
+ 	
+ 	<select id="selectOrderInfo" parameterType="hashmap" resultType="hashmap">
+ 		SELECT * FROM mk_order WHERE order_num=#{IDX}
+ 	</select>
+ 
+</mapper>

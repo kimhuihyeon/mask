@@ -1,0 +1,166 @@
+@charset "UTF-8";
+
+/*adminBoard.jsp*/
+
+.admin-board-jsp .container{
+    margin-top: 40px;
+    /* border:1px solid red; */
+    text-align: center;
+}
+
+.admin-board-jsp .container label{
+    display: block;
+    font-size: 30px;
+    font-weight: bold;
+    margin:10px;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+.admin-board-jsp .container .item{
+    display: inline-block;
+    text-align: right;
+    padding-right: 24px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    width:910px;
+    
+}
+
+.admin-board-jsp table{
+    text-align: center;
+    display: inline-block;
+    /* border-collapse: collapse; 
+    border-spacing: 0; */
+    border-collapse: separate;
+    border-spacing: 0 7px;
+}
+
+.admin-board-jsp tr,.admin-board-jsp td, .admin-board-jsp th{
+    padding:7px 8px;
+    width:200px;
+    height:10px;
+    font-size: 12px;
+    
+}
+
+
+
+.admin-board-jsp tr:nth-child(1){
+    border-bottom: 1px solid lightgray;
+    border-top: 1px solid lightgray;
+    background:rgb(69, 69, 71);
+    color:white;
+}
+
+
+
+.admin-board-jsp tr>td:nth-child(1),.admin-board-jsp  tr>th{
+    width:50px;
+}
+
+
+
+.admin-board-jsp td{
+    background: rgb(255, 255, 255);
+    text-align:center;
+}
+
+
+/*글작성*/
+
+.boardWrite .container{
+    margin-top: 70px;
+    height: 300vh;
+    text-align: center;
+}
+
+.boardWrite .board{
+    margin-top:70px;
+    margin:auto;
+    width:1000px;
+    padding:30px;
+    
+}
+
+.boardWrite .board .aaaaa{
+    border: 1px solid;
+    text-align: left;
+    height: 30px;
+    margin-bottom: 10px;
+}
+
+.boardWrite .board input{
+    outline: none;
+    padding:5px;
+    box-sizing: border-box;
+}
+
+.boardWrite form{
+    float: left;
+    text-align: left;
+    margin-left: 20px;
+}
+
+.boardWrite button:hover{
+    opacity: .7;
+}
+
+
+/*테이블*/
+
+.noticeList-jsp .container{
+    margin-top: 40px;
+    /* border:1px solid red; */
+    text-align: center;
+    height: 200vh;
+}
+
+.noticeList-jsp .container label{
+    display: block;
+    font-size: 40px;
+    font-weight: bold;
+    margin:10px;
+    padding: 20px;
+}
+
+.noticeList-jsp .container .item{
+    display: inline-block;
+    text-align: right;
+    padding-right: 24px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    width:910px;
+    
+}
+
+.noticeList-jsp table{
+    text-align: center;
+    display: inline-block;
+    border-collapse: separate;
+    border-spacing: 0 7px;
+}
+
+.noticeList-jsp td{
+    background-color: white;
+}
+
+.noticeList-jsp tr,.noticeList-jsp td,.noticeList-jsp th{
+    padding:7px 8px;
+    width:200px;
+    height:10px;
+    font-size: 12px;
+}
+
+.noticeList-jsp tr:nth-child(1){
+    border-bottom: 1px solid lightgray;
+    border-top: 1px solid lightgray;
+    background:rgb(69, 69, 71);
+    color:white;
+}
+
+
+
+.noticeList-jsp tr>td:nth-child(1), .noticeList-jsp tr>th{
+    width:50px;
+}

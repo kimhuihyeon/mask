@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="review">
+
+	<select id="reviweDetail" parameterType="hashmap" resultType="hashmap">
+		<![CDATA[
+			SELECT
+				BOARD_NUM
+				
+			FROM
+				BOARD
+			WHERE
+				BOARD_NUM = #{BOARD_NUM}		
+		]]>
+	</select>
+
+
+<select id="reviewListPaging" parameterType="hashmap" resultType="hashmap">
+<![CDATA[
+SELECT 
+			    AAA.*
+			FROM(
+			    SELECT 
+			        COUNT(*) OVER() AS TOTAL_COUNT,
+			        AA.*
+			    FROM(  
+SELECT ROW_NUMBER() OVER (ORDER BY BOARD_NUM DESC) RNUM,BOARD_NUM,  BOARD_TITLE, MEM_ID, GOODS_NUM,
+ TO_CHAR(BOARD_DATE, 'YYYY.MM.DD') AS BOARD_DATE, BOARD_STAR
+FROM BOARD
+where  BOARD_TYPE='REVIWE' AND BOARD_DEL_GB='N'
+ 			 	) AA
+			) AAA
+			WHERE 
+			    AAA.RNUM BETWEEN #{START} AND #{END}
+]]>
+</select>
+
+
+<insert id="reviewInsert" parameterType="hashmap" useGeneratedKeys="true" keyProperty="BOARD_NUM">
+		<selectKey keyProperty="BOARD_NUM" resultType="string" order="BEFORE">
+			SELECT BOARD_SEQ.nextval FROM DUAL
+		</selectKey>
+		<![CDATA[
+			INSERT INTO BOARD
+			(
+		BOARD_NUM, BOARD_TYPE, BOARD_TITLE, MEM_ID,
+		BOARD_CONTENT, BOARD_COUNT, BOARD_UP, BOARD_STAR)
+
+		VALUES
+		(
+				#{BOARD_NUM}, 
+			'REVIWE',#{BOARD_TITLE},#{MEM_ID},
+			#{BOARD_TITLE},0,0,#{BOARD_STAR})
+		]]>
+	</insert>
+
+	
+	
+	<update id="reviewDelete" parameterType="hashmap">
+			<![CDATA[
+			UPDATE BOARD
+			SET
+				BOARD_DEL_GB = 'Y'
+			WHERE
+				BOARD_NUM = #{BOARD_NUM}
+			]]>
+	
+	</update>
+	
+	<update id="reviewUpdate" parameterType="hashmap" >
+			<![CDATA[
+			UPDATE BOARD
+			SET
+				BOARD_TITLE=#{BOARD_TITLE},
+				BOARD_CONTENT=#{BOARD_TITLE}
+			WHERE
+				BOARD_NUM = #{BOARD_NUM}
+			]]>
+	
+	</update>
+</mapper>
