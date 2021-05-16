@@ -1,0 +1,1242 @@
+@charset "UTF-8";
+
+
+/*login*/
+.login .container{
+    position: absolute; /*inline-block됨*/
+    /* border:1px solid red; */
+    text-align: center;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    display: flex;
+    width:700px;
+    height:50vh;
+}
+
+.login .left-conataier,.right-conatiner{
+    display: inline-block;
+    flex:1;
+}
+
+.login .left-conataier{
+     padding:20px;
+
+}
+
+.login .left-conataier > label:nth-of-type(1){
+    display: inline-block;
+    margin:20px;
+    font-weight: bold;
+    font-size: 19px;
+}
+
+.login .left-conataier input[type=radio]{
+    display: none;
+}
+
+.login .check{
+    text-align: right;
+    padding-right: 30px;
+    
+}
+
+.login .check label{
+    display: inline-block;
+    cursor: pointer;
+    font-size:12px;
+    color:rgb(48, 44, 44);
+    width:37px;
+    text-align: center;
+    line-height: inherit;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.login input[id=mem]:checked ~ .check label[for=mem]{
+    background: rgb(48, 44, 44);
+    color:white;
+}
+
+.login input[id=mem]:checked ~ .mem-login .non-member{
+    display: none;
+}
+
+.login input[id=non-mem]:checked ~ .check label[for=non-mem]{
+    background: rgb(48, 44, 44);
+    color:white;
+}
+
+.login input[id=non-mem]:checked ~ .mem-login .member{
+    display: none;
+}
+
+
+
+.login .mem-login{
+    position: relative;
+}
+
+.login .non-mem-login{
+    position:absolute;
+    top:0;
+    left:0;
+}
+
+.login .item{
+  /* border: 1px solid dodgerblue; */
+  width: 300px;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+
+.login .item input {
+    border: 1px solid lightgray;
+    height: 40px;
+    width: inherit;
+    border-radius: 5px;
+    padding: 10px;
+    box-sizing: border-box;
+    padding-left: 50px;
+    outline: none;
+    transition: 0.3s;
+  }
+
+.login .item .fa {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #fff;
+    background-color: gray;
+    font-size: 20px;
+    width: 40px;
+    height: 40px;
+    /*border: 1px solid blue;*/
+    text-align: center;
+    line-height: 40px;
+    transition: 0.3s;
+    border-radius: 5px 0 0 5px;
+}
+.login .item input:focus {
+    border: 1px solid rgb(180, 184, 189);
+    box-shadow: 0 0 5px rgb(180, 184, 189);
+}
+
+.login .item input:focus + .fa {
+    background-color: rgb(180, 184, 189);
+}
+
+.login .item input:focus::placeholder {
+    visibility: hidden;
+}
+
+.login .left-conataier button{
+    width:200px;
+    padding:10px;
+    margin:10px;
+}
+
+.login .find a{
+    font-size: 11px;
+}
+
+.login .find a:hover{
+    color:rgb(145, 143, 143);
+   
+}
+
+
+.login .right-conatiner{
+    text-align: center;
+    padding-top:80px;
+    box-sizing: border-box;
+}
+
+.login .right-conatiner label{
+    display:block;
+    font-weight: bold;
+    font-size:20px;
+    margin-bottom: 10px;
+}
+
+.login .right-conatiner span{
+    font-size: 12px;
+}
+
+.login .right-conatiner span em{
+    font-weight: bold;
+    font-size:15px;
+    color:crimson;
+}
+
+.login .right-conatiner button{
+    padding:10px;
+    width:300px;
+    margin:40px;
+}
+
+.login button{
+    box-shadow:none;
+    cursor:pointer;
+
+}
+
+.login button:hover{
+    color:white;
+    background: rgb(48, 44, 44);
+   
+}
+
+/*findId*/
+
+.findId .container{
+    position: absolute; /*inline-block됨*/
+    /* border:1px solid red; */
+    text-align: center;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    display: flex;
+    width:400px;
+    height:50vh;
+}
+
+.findId .left-conataier,.right-conatiner{
+    display: inline-block;
+    flex:1;
+}
+
+.findId .left-conataier{
+     padding:20px;
+
+}
+
+.findId .left-conataier > label:nth-of-type(1){
+    display: inline-block;
+    margin:20px;
+    font-weight: bold;
+    font-size: 19px;
+}
+
+.findId .left-conataier input[type=radio]{
+    display: none;
+}
+
+.findId .check{
+    text-align: right;
+    padding-right: 30px;
+    
+}
+
+.findId .check label{
+    display: inline-block;
+    cursor: pointer;
+    font-size:12px;
+    color:rgb(48, 44, 44);
+    width:37px;
+    text-align: center;
+    line-height: inherit;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.findId input[id=email]:checked ~ .check label[for=email]{
+    background: rgb(48, 44, 44);
+    color:white;
+}
+
+.findId input[id=email]:checked ~ .find_id .f_phone{
+    display: none;
+}
+
+.findId input[id=phone]:checked ~ .check label[for=phone]{
+    background: rgb(48, 44, 44);
+    color:white;
+}
+
+.findId input[id=phone]:checked ~ .find_id .f_email{
+    display: none;
+}
+
+
+
+.findId .email-login{
+    position: relative;
+}
+
+.findId .non-email-login{
+    position:absolute;
+    top:0;
+    left:0;
+}
+
+.findId .item{
+  /* border: 1px solid dodgerblue; */
+  width: 300px;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+
+.findId .item input {
+    border: 1px solid lightgray;
+    height: 40px;
+    width: inherit;
+    border-radius: 5px;
+    padding: 10px;
+    box-sizing: border-box;
+    padding-left: 50px;
+    outline: none;
+    transition: 0.3s;
+  }
+
+  .findId .item .fa {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #fff;
+    background-color: gray;
+    font-size: 20px;
+    width: 40px;
+    height: 40px;
+    /*border: 1px solid blue;*/
+    text-align: center;
+    line-height: 40px;
+    transition: 0.3s;
+    border-radius: 5px 0 0 5px;
+  }
+
+ .findId .item input:focus {
+    border: 1px solid rgb(180, 184, 189);
+    box-shadow: 0 0 5px rgb(180, 184, 189);
+  }
+
+  .findId  .item input:focus + .fa {
+    background-color: rgb(180, 184, 189);
+  }
+  .findId .item input:focus::placeholder {
+    visibility: hidden;
+  }
+
+  .findId .left-conataier button{
+    width:200px;
+    padding:10px;
+    margin:10px;
+}
+
+.findId .find a{
+    font-size: 11px;
+}
+
+.findId .find a:hover{
+    color:rgb(145, 143, 143);
+}
+
+.findId .right-conatiner{
+    text-align: center;
+    padding-top:20px;
+    box-sizing: border-box;
+}
+
+.findId .right-conatiner label:nth-child(1){
+    font-weight: bold;
+    font-size:16px;
+}
+
+.findId .right-conatiner input[type=radio]{
+    display: none;
+}
+
+
+.findId button{
+    box-shadow:none;
+    cursor:pointer;
+
+}
+
+.findId button:hover{
+    color:white;
+    background: rgb(48, 44, 44);
+   
+}
+
+/*findPw.jsp*/
+.findPw .container{
+    position: absolute; /*inline-block됨*/
+    /* border:1px solid red; */
+    text-align: center;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    display: flex;
+    width:400px;
+    height:50vh;
+}
+
+.findPw .left-conataier,.right-conatiner{
+    display: inline-block;
+    flex:1;
+}
+
+.findPw .left-conataier{
+     padding:20px;
+
+}
+
+.findPw .left-conataier > label:nth-of-type(1){
+    display: inline-block;
+    margin:20px;
+    font-weight: bold;
+    font-size: 19px;
+}
+
+.findPw .left-conataier input[type=radio]{
+    display: none;
+}
+
+.findPw  .check{
+    text-align: right;
+    padding-right: 30px;
+    
+}
+
+.findPw  .check label{
+    display: inline-block;
+    cursor: pointer;
+    font-size:12px;
+    color:rgb(48, 44, 44);
+    width:37px;
+    text-align: center;
+    line-height: inherit;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.findPw input[id=email]:checked ~ .check label[for=email]{
+    background: rgb(48, 44, 44);
+    color:white;
+}
+
+.findPw input[id=email]:checked ~ .find_id .f_phone{
+    display: none;
+}
+
+.findPw input[id=phone]:checked ~ .check label[for=phone]{
+    background: rgb(48, 44, 44);
+    color:white;
+}
+
+.findPw input[id=phone]:checked ~ .find_id .f_email{
+    display: none;
+}
+
+
+
+.findPw .email-login{
+    position: relative;
+}
+
+.findPw .non-email-login{
+    position:absolute;
+    top:0;
+    left:0;
+}
+
+.findPw .item{
+  /* border: 1px solid dodgerblue; */
+  width: 300px;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+
+.findPw .item input {
+    border: 1px solid lightgray;
+    height: 40px;
+    width: inherit;
+    border-radius: 5px;
+    padding: 10px;
+    box-sizing: border-box;
+    padding-left: 50px;
+    outline: none;
+    transition: 0.3s;
+  }
+
+.findPw   .item .fa {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #fff;
+    background-color: gray;
+    font-size: 20px;
+    width: 40px;
+    height: 40px;
+    /*border: 1px solid blue;*/
+    text-align: center;
+    line-height: 40px;
+    transition: 0.3s;
+    border-radius: 5px 0 0 5px;
+  }
+
+  .findPw   .item input:focus {
+    border: 1px solid rgb(180, 184, 189);
+    box-shadow: 0 0 5px rgb(180, 184, 189);
+  }
+  .findPw  .item input:focus + .fa {
+    background-color: rgb(180, 184, 189);
+  }
+  .findPw  .item input:focus::placeholder {
+    visibility: hidden;
+  }
+
+  .findPw .left-conataier button{
+    width:200px;
+    padding:10px;
+    margin:10px;
+}
+
+.findPw .find a{
+    font-size: 11px;
+}
+
+.findPw .find a:hover{
+    color:rgb(145, 143, 143);
+}
+
+.findPw .right-conatiner{
+    text-align: center;
+    padding-top:20px;
+    box-sizing: border-box;
+}
+.findPw .right-conatiner label:nth-child(1){
+    font-weight: bold;
+    font-size:16px;
+}
+
+.findPw .right-conatiner input[type=radio]{
+    display: none;
+}
+
+
+.findPw button{
+    box-shadow:none;
+    cursor:pointer;
+
+}
+
+.findPw button:hover{
+    color:white;
+    background: rgb(48, 44, 44);
+   
+}
+
+/*findOrderNum*/
+
+.find_order_num_jsp .container{
+    position: absolute; /*inline-block됨*/
+    /* border:1px solid red; */
+    text-align: center;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    display: flex;
+    width:400px;
+    height:50vh;
+}
+
+.find_order_num_jsp .left-conataier,.right-conatiner{
+    display: inline-block;
+    flex:1;
+}
+
+.find_order_num_jsp .left-conataier{
+     padding:20px;
+
+}
+
+.find_order_num_jsp .left-conataier > label:nth-of-type(1){
+    display: inline-block;
+    margin:20px;
+    font-weight: bold;
+    font-size: 19px;
+}
+
+.find_order_num_jsp .left-conataier input[type=radio]{
+    display: none;
+}
+
+.find_order_num_jsp .check{
+    text-align: right;
+    padding-right: 30px;
+    
+}
+
+.find_order_num_jsp .check label{
+    display: inline-block;
+    cursor: pointer;
+    font-size:12px;
+    color:rgb(48, 44, 44);
+    width:37px;
+    text-align: center;
+    line-height: inherit;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.find_order_num_jsp input[id=email]:checked ~ .check label[for=email]{
+    background: rgb(48, 44, 44);
+    color:white;
+}
+
+.find_order_num_jsp input[id=email]:checked ~ .find_id .f_phone{
+    display: none;
+}
+
+.find_order_num_jsp input[id=phone]:checked ~ .check label[for=phone]{
+    background: rgb(48, 44, 44);
+    color:white;
+}
+
+.find_order_num_jsp input[id=phone]:checked ~ .find_id .f_email{
+    display: none;
+}
+
+
+
+.find_order_num_jsp .email-login{
+    position: relative;
+}
+
+.find_order_num_jsp .non-email-login{
+    position:absolute;
+    top:0;
+    left:0;
+}
+
+.find_order_num_jsp .item{
+  /* border: 1px solid dodgerblue; */
+  width: 300px;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+
+.find_order_num_jsp .item input {
+    border: 1px solid lightgray;
+    height: 40px;
+    width: inherit;
+    border-radius: 5px;
+    padding: 10px;
+    box-sizing: border-box;
+    padding-left: 50px;
+    outline: none;
+    transition: 0.3s;
+  }
+
+.find_order_num_jsp .item .fa {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #fff;
+    background-color: gray;
+    font-size: 20px;
+    width: 40px;
+    height: 40px;
+    /*border: 1px solid blue;*/
+    text-align: center;
+    line-height: 40px;
+    transition: 0.3s;
+    border-radius: 5px 0 0 5px;
+  }
+
+.find_order_num_jsp .item input:focus {
+    border: 1px solid rgb(180, 184, 189);
+    box-shadow: 0 0 5px rgb(180, 184, 189);
+  }
+
+  .find_order_num_jsp   .item input:focus + .fa {
+    background-color: rgb(180, 184, 189);
+  }
+  .find_order_num_jsp .item input:focus::placeholder {
+    visibility: hidden;
+  }
+
+  .find_order_num_jsp .left-conataier button{
+    width:200px;
+    padding:10px;
+    margin:10px;
+}
+
+.find_order_num_jsp .find a{
+    font-size: 11px;
+}
+
+.find_order_num_jsp .find a:hover{
+    color:rgb(145, 143, 143);
+}
+
+.find_order_num_jsp .right-conatiner{
+    text-align: center;
+    padding-top:20px;
+    box-sizing: border-box;
+}
+
+.find_order_num_jsp .right-conatiner label:nth-child(1){
+    font-weight: bold;
+    font-size:16px;
+}
+
+.find_order_num_jsp .right-conatiner input[type=radio]{
+    display: none;
+}
+
+
+.find_order_num_jsp button{
+    box-shadow:none;
+    cursor:pointer;
+
+}
+
+.find_order_num_jsp button:hover{
+    color:white;
+    background: rgb(48, 44, 44);
+   
+}
+
+/*join.jsp*/
+
+.join_jsp li,ul,ol{
+    margin: 0;
+    padding:0;
+    list-style: none;
+
+}
+
+.join_jsp .join{
+    margin-top: 10px;
+    /* border:1px solid red; */
+    text-align: center;
+    padding-top: 20px;
+
+}
+
+.join_jsp .form_txtInput > h2{
+    margin:30px;
+    margin-bottom: 20px;
+}
+
+
+.join_jsp table{
+    display: inline-block;
+    margin-top: 40px;
+
+}
+.join_jsp .wrap{
+    display: inline-block;
+}
+
+.join_jsp th{
+    /* border:1px solid pink; */
+    text-align: center;
+    
+}
+
+.join_jsp tr, td {
+    /* border:1px solid dodgerblue; */
+    text-align: left;
+    padding:5px;
+    height: 50px;
+}
+
+
+.join_jsp input[type=text]{
+    border: 1px solid lightgray;
+    height: 40px;
+    width: inherit;
+    border-radius: 5px;
+    padding: 10px;
+    box-sizing: border-box;
+    outline: none;
+    transition: 0.3s;
+}
+
+.join_jsp .height{
+    height:7px;
+}
+
+.join_jsp input:focus {
+    border: 1px solid rgb(180, 184, 189);
+    box-shadow: 0 0 5px rgb(180, 184, 189);
+  }
+
+.join_jsp button{
+    margin-left: 13px;
+    padding: 7px;
+    border: 1px solid lightgray;
+    outline-style: none;
+    transition: .5s;
+    border-radius: 5px;
+    display: inline-block;
+    
+}
+
+.join_jsp button:focus{
+    border: 1px solid rgb(180, 184, 189);
+    box-shadow: 0 0 5px rgb(180, 184, 189);
+}
+
+
+.join_jsp .btn_wrap button{
+    margin: 10px;
+    width:200px;
+    padding: 10px;
+    border:1px solid;
+    border-radius: 5px;
+}
+
+.join_jsp .btn_wrap button:hover{
+    color:white;
+    background: rgb(48, 44, 44);
+}
+
+
+.join_jsp .agree_wrap{
+    margin: 20px;
+}
+
+/*orderCom.jsp*/
+
+.orderCom .box{
+    position: absolute;
+    left:50%;
+    transform: translateX(-50%);
+    text-align: center;
+    margin-top:70px;
+    margin-bottom: 100px;
+}
+
+
+.orderCom .box > label{
+    display: inline-block;
+    width:200px;
+    height:50px;
+    text-align: center;
+    line-height: 50px;
+    font-size:30px;
+    font-weight: bold;
+    padding:10px;
+    margin-bottom: 40px;
+    
+}
+
+.orderCom .container{
+    width:700px;
+    
+}
+
+.orderCom .container > div:first-child{
+    height: 50px;
+    font-size: 20px;;
+    font-weight: bold;
+    line-height: 50px;
+}
+
+.orderCom table{
+    text-align: left;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
+.orderCom tr:nth-child(1) th, tr:nth-child(9) th{
+    padding:0;
+    border-bottom: 1px solid lightgray;
+}
+
+.orderCom th>label{
+    display: inline-block;
+    font-size: 11px;
+    color: rgb(78, 76, 76);
+    margin-left:10px;
+    padding-top: 40px;
+    padding-bottom: 6px;
+}
+
+
+.orderCom td,th{
+    padding:5px;
+    font-size:13px;
+    height:10px;
+}
+
+.orderCom th{
+    width: 140px;
+    font-weight: bold;
+    padding-left: 20px;
+    color:rgb(43, 41, 41);
+    width:120px;
+}
+
+.orderCom td{
+    text-align: left;
+    width:500px;
+    font-size:1px
+}
+
+.orderCom button{
+    padding:10px 5;
+    
+}
+
+.orderCom button{
+    margin: 10px;
+    width:200px;
+    padding: 10px;
+    border:1px solid;
+    border-radius: 5px;
+}
+
+.orderCom button:hover{
+    color:white;
+    background: rgb(48, 44, 44);
+}
+
+
+.orderCom .text{
+    font-size: 13px;
+}
+
+
+/*myPage*/
+
+
+.mypage2 .body{
+    height:300vh;
+    text-align: center;
+}
+
+
+.mypage2 .box{
+    border: 3px dashed rgb(196, 189, 189);
+}
+
+.mypage2 .body label{
+    display: inline-block;
+    font-size: 43px;
+    font-weight: bold;
+    margin:80px 0;
+}
+
+.mypage2 .box{
+    margin:auto;
+    width:400px;
+    padding:30px;
+    border-radius: 20px;
+    margin-bottom: 80px;
+}
+
+.mypage2 .box> div:nth-child(1){
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.mypage2 .box> div span:nth-child(1){
+    margin-right: 20px;
+}
+.mypage2 .join{
+    margin-top: 10px;
+    /* border:1px solid red; */
+    text-align: center;
+    padding-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.mypage2 .wrap{
+    display: inline-block;
+    width:650px;
+}
+
+.mypage2 th{
+    /* border:1px solid pink; */
+    text-align: center;
+    
+}
+
+.mypage2 tr, .mypage2  td {
+    /* border:1px solid dodgerblue; */
+    text-align: left;
+    padding:5px;
+}
+
+
+
+.mypage2 input[type=text],.mypage2 input[type=password]{
+    outline-style: none;
+    height:30px;
+    margin:5px;
+    padding-left:20px;
+}
+
+.mypage2 button{
+    margin-left: 13px;
+    padding:5px;
+}
+
+
+.mypage2 .btn_wrap {
+    text-align: center;
+    position: relative;
+    margin-top:100px;
+}
+
+.mypage2 .btn_wrap button{
+    width:200px;
+    padding: 10px;
+    border:1px solid;
+    border-radius: 5px;
+}
+
+.mypage2 .btn_wrap button:hover{
+    color:white;
+    background: rgb(48, 44, 44);
+}
+
+
+.mypage2 .agree_wrap{
+    margin: 20px;
+}
+
+
+.mypage2 input[type=text] {
+    border: 1px solid lightgray;
+    height: 40px;
+    width: inherit;
+    border-radius: 5px;
+    padding: 10px;
+    box-sizing: border-box;
+    outline: none;
+    transition: 0.3s;
+  }
+
+  .mypage2 input:focus {
+    border: 1px solid rgb(180, 184, 189);
+    box-shadow: 0 0 5px rgb(180, 184, 189);
+  }
+  .mypage2 input:focus + .fa {
+    background-color: rgb(180, 184, 189);
+  }
+  .mypage2 input:focus::placeholder {
+    visibility: hidden;
+  }
+  
+  
+  /*정보 수정*/
+  
+.mypage3{
+    height: 400vh;
+}
+
+.mypage3 .join{
+    margin-top: 30px;
+    /* border:1px solid red; */
+    text-align: center;
+    padding-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.mypage3 .sub_tit_txt{
+    margin-bottom: 100px;
+}
+
+.mypage3 .wrap{
+    display: inline-block;
+    width:650px;
+}
+
+.mypage3 th{
+    /* border:1px solid pink; */
+    text-align: center;
+    
+}
+
+.mypage3 tr, .mypage td {
+    /* border:1px solid dodgerblue; */
+    text-align: left;
+    padding:5px;
+}
+
+
+
+.mypage3 input[type=text]{
+    outline-style: none;
+    height:30px;
+    margin:5px;
+    padding-left:20px;
+}
+
+.mypage3 button{
+    margin-left: 13px;
+    padding:5px;
+}
+
+
+.mypage3 .btn_wrap {
+    text-align: center;
+    position: relative;
+}
+
+.mypage3 .btn_wrap button{
+    position: absolute;
+    left: 30%;
+    margin: 30px;
+    width:200px;
+    padding: 10px;
+    border:1px solid;
+    border-radius: 5px;
+}
+
+.mypage3 .btn_wrap button:hover{
+    color:white;
+    background: rgb(48, 44, 44);
+}
+
+
+.mypage3 .agree_wrap{
+    margin: 20px;
+}
+
+
+.mypage3 input[type=text] {
+    border: 1px solid lightgray;
+    height: 40px;
+    width: inherit;
+    border-radius: 5px;
+    padding: 10px;
+    box-sizing: border-box;
+    outline: none;
+    transition: 0.3s;
+  }
+
+.mypage3 input:focus {
+    border: 1px solid rgb(180, 184, 189);
+    box-shadow: 0 0 5px rgb(180, 184, 189);
+  }
+.mypage3 input:focus + .fa {
+    background-color: rgb(180, 184, 189);
+  }
+.mypage3 input:focus::placeholder {
+    visibility: hidden;
+  }
+
+/*내정보 수정 전 비밀번호 체크*/
+
+.myPageLogin_jsp .findPw .container{
+    position: absolute; /*inline-block됨*/
+    /* border:1px solid red; */
+    text-align: center;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    display: flex;
+    width:400px;
+    height:50vh;
+}
+
+.myPageLogin_jsp .findPw .conataier{
+    display: inline-block;
+    flex:1;
+}
+
+.myPageLogin_jsp .findPw .conataier{
+     padding:20px;
+
+}
+.myPageLogin_jsp .container div:nth-of-type(1){
+    margin-bottom: 30px;
+}
+
+.myPageLogin_jsp .findPw .conataier > label:nth-of-type(1){
+    display: inline-block;
+    margin:20px;
+    font-weight: bold;
+    font-size: 19px;
+}
+
+
+.myPageLogin_jsp .findPw .email-login{
+    position: relative;
+}
+
+.myPageLogin_jsp .findPw .non-email-login{
+    position:absolute;
+    top:0;
+    left:0;
+}
+
+.myPageLogin_jsp .findPw .item{
+  /* border: 1px solid dodgerblue; */
+  width: 200px;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+
+.myPageLogin_jsp .findPw .item input {
+    border: 1px solid lightgray;
+    height: 40px;
+    width: inherit;
+    border-radius: 5px;
+    padding: 10px;
+    box-sizing: border-box;
+    padding-left: 50px;
+    outline: none;
+    transition: 0.3s;
+  }
+
+  .myPageLogin_jsp .findPw   .item .fa {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #fff;
+    background-color: gray;
+    font-size: 20px;
+    width: 40px;
+    height: 40px;
+    /*border: 1px solid blue;*/
+    text-align: center;
+    line-height: 40px;
+    transition: 0.3s;
+    border-radius: 5px 0 0 5px;
+  }
+
+  .myPageLogin_jsp .findPw   .item input:focus {
+    border: 1px solid rgb(180, 184, 189);
+    box-shadow: 0 0 5px rgb(180, 184, 189);
+  }
+  .myPageLogin_jsp  .findPw  .item input:focus + .fa {
+    background-color: rgb(180, 184, 189);
+  }
+  .myPageLogin_jsp  .findPw  .item input:focus::placeholder {
+    visibility: hidden;
+  }
+
+
+
+.myPageLogin_jsp .findPw button{
+    width:70px;
+    padding:10px;
+    box-shadow:none;
+    cursor:pointer;
+    border:1px solid rgb(114, 110, 110);
+    border-radius: 10px;
+    outline: none;
+}
+
+.myPageLogin_jsp .findPw button:hover{
+    color:white;
+    background: rgb(48, 44, 44);
+   
+}

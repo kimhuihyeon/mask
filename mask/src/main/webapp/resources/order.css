@@ -1,0 +1,209 @@
+@charset "UTF-8";
+
+/*cart.jsp*/
+
+
+/*장바구니*/
+.cart .container{
+    text-align: center;
+}
+
+.cart table{
+    text-align: center;
+    display: inline-block;
+    border-collapse: separate;
+    border-spacing: 0 7px;
+    width:900px;
+}
+
+.cart tr, .cart th, .cart td{
+    padding:0 8px;
+    width:200px;
+    height:10px;
+    font-size: 12px;
+}
+
+.cart td{
+    background-color: rgb(255, 255, 255);
+}
+
+.cart td:nth-child(1),.cart th:nth-child(1){
+    width:30px;
+}
+
+.cart td:nth-child(2), .cart th:nth-child(2){
+    width:300px;
+}
+
+.cart td:nth-child(4), .cart th:nth-child(4){
+    width:50px;
+}
+
+.cart th{
+    background: rgb(78, 73, 73);
+    color:white;
+}
+
+.cart .container > label{
+    display: inline-block;
+    width:810px;
+    padding:20px;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top:50px;
+    margin-bottom:20px;
+}
+
+.cart .all-select{
+    display: block;
+    width:900px;
+    text-align: right;
+    margin:0 auto;
+    margin-bottom: 10px;
+}
+
+.cart button{
+    outline: none;
+    box-shadow: none;
+    border:none;
+    cursor: pointer;
+}
+
+.cart .all-select button{
+    width:100px;
+    height:30px;
+    border:1px solid ;
+    border-radius:5px;
+}
+
+.cart .all-select button:hover{
+    background:  rgb(85, 79, 79);
+    color:white;
+    
+}
+
+.cart img{
+    font-size: 0;
+    margin:0;
+    padding:0;
+    margin-top:10px;
+    width:150px;
+    height:130px;
+}
+
+.cart td{
+    border-bottom:1px solid lightgray;
+    text-align: center;
+    line-height: inherit;
+}
+
+.cart input{
+    width:20px;
+}
+
+.cart td:last-child button{
+    border:1px solid lightgray;
+    padding:5px;
+    border-radius:5px;
+}
+
+.cart td:last-child button:hover{
+    background:  rgb(82, 76, 76);
+    color:white;
+}
+
+.cart td:last-child button:hover{
+    background:  rgb(82, 76, 76);
+    color:white;
+}
+
+/*주문내역*/
+
+.orderList-jsp{
+    height:500vh;
+    padding-top: 100px;
+}
+
+.orderList-jsp table{
+    text-align: center;
+    width:1100px;
+    margin: auto;
+    border-collapse: separate;
+     border-spacing: 0 10px;
+}
+
+.orderList-jsp th{
+    padding:10px;
+    border-top: 2px solid lightgray;
+    border-bottom: 2px solid lightgray;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.orderList-jsp td{
+    background: white;
+    padding:10px 0;
+    font-size: 11px;
+}
+
+.orderList-jsp table tr:last-child td{
+    
+    border-bottom: 2px solid lightgray;
+}
+
+.orderList-jsp tr,.orderList-jsp th,.orderList-jsp td{
+    text-align: center;
+    
+}
+
+.orderList-jsp table select{
+    width:120px;
+    margin-right: 10px;
+    padding:5px;
+    border-radius: 5px;
+    border:1px solid lightsteelblue;
+    outline: none;
+}
+
+.orderList-jsp table select:focus{
+    border: 1px solid rgb(180, 184, 189);
+    box-shadow: 0 0 5px rgb(180, 184, 189);
+}
+
+
+.orderList-jsp table img{
+    width:150px;
+    height:100px;
+   
+}
+
+.orderList-jsp .a-btn{
+    padding:2px;
+    box-sizing: border-box;
+    width:100px;
+    outline: none;
+    border-radius: 5px;
+    background: rgb(112, 88, 88);
+    color:white;
+    border: none;
+}
+
+.orderList-jsp .a-btn:hover,.orderList-jsp  .b-btn:hover{
+    opacity: .8;
+}
+
+.orderList-jsp .b-btn{
+    border:none;
+    border:1px solid black;
+    padding:8px 4px;
+    width:90px;
+    outline: none;
+    border-radius: 5px;
+    background: rgb(112, 88, 88);
+    color:white;
+    border: none;
+    margin-right: 3px;
+}
+
+/*orderDetail*/
+

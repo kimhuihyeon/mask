@@ -1,0 +1,368 @@
+/* Google Web Fonts CDN */
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,400,500,700,900&display=swap');
+
+/*header*/
+
+body{
+    font-family: 'Noto Sans KR', sans-serif;
+    color:#222;
+    line-height: 1.5em;
+    background: #f4f4f4;
+}
+
+a{ 
+    color:#222;
+    text-decoration:none; 
+}
+
+
+.header{
+    position: relative;
+    text-align: center;
+    height:58px;
+    background: white;
+    margin-bottom: 10px;
+    border-bottom: 1px solid lightgray;
+    min-width: 1010px;
+}
+
+.logo, .menu,form{
+    display: inline-block;
+}
+
+.logo{
+    position: absolute;
+    left:0;
+    top:50%;
+    transform:translateY(-50%);
+    margin-left: 13px;
+    font-weight: bold;
+}
+
+
+.menu{
+    position: absolute;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    font-size: 0;
+    width:415px;
+}
+
+.menu a{
+    display: inline-block;
+    font-size:16px;
+    padding:18px 12px;
+    transition: .2s;
+}
+
+.menu a:hover{
+    background: rgb(48, 44, 44);
+    color:white;
+}
+
+
+.header-container{
+    position: absolute;
+    right:0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 10px;
+    margin-right: 20px;
+}
+
+.header-container a{
+    padding:6px;
+}
+
+.header-container a:hover {
+    color:rgb(136, 131, 131);
+} 
+
+
+/*main.css*/
+
+.box{
+    margin-top: 40px;
+}
+
+/* 배너사이즈와 위치 */
+#s_banner_wrap {
+    /* width:300px;  */
+    height:300px; 
+    position: relative; 
+    margin:10px 0
+}
+
+.banner_01 {
+    height:400px; 
+}
+
+.banner_02 {
+    /*  */
+    height:400px; 
+}
+
+.banner_03{
+    height:400px; 
+}
+
+.banner_01 img, .banner_02 img, .banner_03 img{
+    width:inherit;
+    height:inherit;
+}
+
+
+.bx-wrapper .bx-controls-direction a {
+    position: absolute;top: 50%;	
+    margin-top: -16px;
+    outline: 0;
+    width: 32px;
+    height: 32px;
+    text-indent: -9999px;
+    z-index: 9999;
+}
+
+.bx-wrapper .bx-prev {
+    left: 10px;	
+    background: url(images/controls.png) no-repeat 0 -32px;
+}
+
+.bx-wrapper .bx-next {
+    right: 10px;	
+    background: url(./images/controls.png) no-repeat -43px -32px;
+}
+
+
+.bx-wrapper .bx-pager.bx-default-pager a.active {
+    background: #000;
+}
+
+.bx-wrapper .bx-pager.bx-default-pager a {
+    background: #ccc;
+    text-indent: -9999px;
+    display: block;	
+    width: 10px;
+    height: 10px;
+    margin: 0 5px;	
+    outline: 0;	
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;	
+    border-radius: 5px;
+}
+
+.bx-wrapper .bx-pager .bx-pager-item,
+.bx-wrapper .bx-controls-auto .bx-controls-auto-item {
+    display: inline-block;
+    *zoom: 1;
+    *display: inline;
+}
+
+.bx-wrapper .bx-pager {
+    text-align: center;
+    font-size: .85em;
+    font-family: Arial;
+    font-weight: bold;
+    color: #ccc;
+    padding-top: 20px;
+}
+
+.bx-wrapper .bx-pager,
+.bx-wrapper .bx-controls-auto {
+    position: absolute;	
+    bottom: 10px;
+    width: 100%;
+
+}
+
+.main{
+    height:1000px;
+}
+
+.main .items{
+    position: absolute;
+    left:50%;
+    transform:translateX(-50%);
+    width:1000px;
+    margin-top:60px;
+    /* border:1px solid red; */
+    text-align: center;
+    height:500px;
+}
+
+/*items*/
+
+.main #center{
+    margin:70px;
+    margin-bottom: 100px;
+}
+
+.main .items{
+    z-index: 2;
+}
+
+
+.main .items .center{
+    /* border:1px solid dodgerblue; */
+    margin:20px;
+    margin-bottom: 50px;
+    font-weight: bold;
+    font-size: 40px;
+
+}
+
+.main .item{
+    display:inline-block;
+    /* border:1px solid; */
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+    margin-left:30px;
+    
+}
+
+.main .item:hover .detail {
+    bottom: 0;
+}
+
+.main .detail{
+    background-color:#f8f8f8;
+    position: absolute;
+    bottom: -210px;
+    left:0;
+    width:100%;
+    height:250px;
+    transition: 0.5s;
+}
+
+.main .item:hover  .detail{
+    bottom:-100px;
+}
+
+
+
+.main .item:hover  img{
+    filter: blur(1.5px);
+}
+
+.main input[type=radio]{
+    display: none;
+}
+
+.main .title{
+    border-bottom:1px solid #ddd;
+    overflow: hidden;
+}
+
+.main .title h2{
+    font-size:16px;
+    color:#888;
+    line-height: 1.2em;
+    float:left;
+    /* border:1px solid dodgerblue; */
+    margin-left: 10px;
+}
+
+.main .title span{
+    font:right;
+    margin-top:10px;
+    font-size:13px;
+    /* color:crimson; */
+    float:right;
+    /* border:1px solid green; */
+    margin-right:10px;
+}
+
+.main .info{
+    /* border: 1px solid rebeccapurple; */
+}
+
+.main .size{
+    /* border:1px solid salmon;
+    background: khaki; */
+    position: relative;
+    
+}
+
+.main .size label{
+    
+}
+.main .size label:nth-child(1){
+    position: absolute;
+    left:0;
+    top:0;
+    margin-left:10px;
+}
+
+.main .amount label,input {
+    display: inline-block;
+}
+
+.main .amount{
+    /* position: absolute;
+    left:0; */
+    text-align: left;
+    margin: 10px;
+}
+.main input[type=text]{
+    size:5px;
+    outline: none;
+    margin-left:10px;
+}
+
+.main .add-cart{
+    display: block;
+    position: absolute;
+    left:50%;
+    transform:translateX(-50%);
+    outline: none;
+    cursor:pointer;
+    width:100%;
+    border: 1px solid #ddd;
+    padding:7px;
+}
+
+.main .size label:nth-child(2),
+.main .size label:nth-child(3),
+.main .size label:nth-child(4){
+    display: inline-block;
+    width:20px;
+    height:20px;
+    font-size: 10px;
+    cursor: pointer;
+    border-radius: 3px;
+    text-align: center;
+    line-height: 20px;
+}
+
+.main .size label:nth-child(2):hover,
+.main .size label:nth-child(3):hover,
+.main .size label:nth-child(4):hover,
+.main input[id=S1]:checked ~ .size label[for=S1],
+.main input[id=M1]:checked ~ .size label[for=M1],
+.main input[id=L1]:checked ~ .size label[for=L1],
+.main input[id=S2]:checked ~ .size label[for=S2],
+.main input[id=M2]:checked ~ .size label[for=M2],
+.main input[id=L2]:checked ~ .size label[for=L2],
+.main input[id=S3]:checked ~ .size label[for=S3],
+.main input[id=M3]:checked ~ .size label[for=M3],
+.main input[id=L3]:checked ~ .size label[for=L3],
+.main input[id=S4]:checked ~ .size label[for=S4],
+.main input[id=M4]:checked ~ .size label[for=M4],
+.main input[id=L4]:checked ~ .size label[for=L4]
+{
+    background: rgb(104, 101, 101);
+    color:white;
+}
+
+.main .add-cart:hover{
+    background-color: rgb(104, 101, 101);
+    color:#fff;
+    
+}
+
+
+.bx-wrapper .bx-viewport {	/*fix other elements on the page moving (on Chrome)*/-webkit-transform: translatez(0);-moz-transform: translatez(0);-ms-transform: translatez(0);-o-transform:translatez(0);transform: translatez(0);}
+.bx-wrapper .bx-viewport ul {margin:0px; padding:0px;}
+
+
