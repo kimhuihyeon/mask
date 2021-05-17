@@ -1,0 +1,102 @@
+/* Google Web Fonts CDN */
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,400,500,700,900&display=swap');
+        
+body{
+    font-family: 'Noto Sans KR', sans-serif;
+    color:#222;
+    line-height: 1.5em;
+    background: #f4f4f4;
+}
+
+a{ /*a태그는 body 서식을 따르지 않는다. 따로 지정해줘야 한다.*/
+    color:#222;
+    text-decoration:none; /*a태그 밑줄 없애기*/
+}
+
+
+.header{
+    position: relative;
+    text-align: center;
+    height:58px;
+    background: white;
+    margin-bottom: 10px;
+    border-bottom: 1px solid lightgray;
+}
+
+.logo,.menu,form{
+    display: inline-block;
+}
+
+.logo{
+    position: absolute;
+    left:0;
+    top:50%;
+    transform:translateY(-50%);
+    margin-left: 13px;
+    font-weight: bold;
+}
+
+.menu{
+    position: absolute;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    font-size: 0;
+    width:415px;
+}
+
+.menu a{
+    display: inline-block;
+    /* border:1px solid red; */
+    font-size:16px;
+    padding:18px 12px;
+    transition: 0.3s;
+}
+
+.menu a:hover{
+    background: rgb(48, 44, 44);
+    color:white;
+}
+
+.dropdown{
+    /* width:200px; */
+    /* border:1px solid; */
+    display:inline-block;
+    position: absolute;
+    right: 0;
+    margin-top:10px;
+}
+.dropdown-btn{ 
+    width:inherit;
+    /* width:200px; */
+    padding:10px; /*높이를 조절할때는 padding을 사용하는 것이 좋다.*/
+    color:black;
+    font-size:18px;
+    background: white;
+    border:none;
+    outline:none;
+    cursor:pointer;
+}
+.dropdown-menu{
+    background: white;
+    display:none;
+    /* width:200px; */
+    width:inherit;
+    box-shadow: 0 0 10px rgba(0,0,0,0.17);
+    position: absolute;
+    z-index: 1;
+}
+
+.dropdown-menu a:hover{
+    background:#eee;
+}
+
+.dropdown-menu a{
+    display:block;
+    padding:7px;
+    text-align: center;
+}
+
+.dropdown:hover .dropdown-menu{
+    display:block;
+}

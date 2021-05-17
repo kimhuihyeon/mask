@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="myPage">
+	<select id="selectMyInfo" parameterType="hashmap" resultType="hashmap">
+	<![CDATA[
+select 
+M.mem_name, 
+M.mem_num, 
+M.mem_id ,
+M.mem_gen ,
+M.mem_phone ,
+M.mem_email,
+M.mem_zipcode , 
+M.mem_address1 , 
+M.mem_address2
+from MEMBER m
+WHERE M.MEM_NUM=#{MEM_NUM}
+]]>
+</select>
+
+
+
+
+	<select id="selectMyInfoSta" parameterType="hashmap" resultType="hashmap">
+	<![CDATA[
+select
+DISTINCT
+sum(CASE WHEN A.AORDER_STATE = '배송중' THEN 1 ELSE 0 end) DELIVERING,
+sum(CASE WHEN A.AORDER_STATE = '배송완료' THEN 1 ELSE 0 end) DELIVERED
+from MEMBER M , admin_order A
+WHERE  A.mem_num = M.MEM_NUM AND M.MEM_NUM=#{MEM_NUM}
+group by (M.mem_name, M.mem_id, M.mem_gen, M.mem_phone, M.mem_email, 
+M.mem_zipcode, M.mem_address1, M.mem_address2)
+]]>
+</select>
+
+
+<!-- 
+select 
+sum(CASE WHEN A.AORDER_STATE = '배송중' THEN 1 ELSE 0 end) DELIVERING,
+sum(CASE WHEN A.AORDER_STATE = '배송완료' THEN 1 ELSE 0 end) DELIVERED,
+M.mem_name, 
+M.mem_id ,
+M.mem_gen ,
+M.mem_phone ,
+M.mem_email,
+M.mem_zipcode , 
+M.mem_address1 , 
+M.mem_address2
+from MEMBER M , admin_order A
+WHERE A.mem_num = M.MEM_NUM AND M.MEM_NUM=#{MEM_NUM} 
+group by (M.mem_name, M.mem_id, M.mem_gen, M.mem_phone, M.mem_email, 
+M.mem_zipcode, M.mem_address1, M.mem_address2)
+
+ -->
+
+	<update id="updateMyInfo" parameterType="hashmap">
+	<![CDATA[
+
+			UPDATE
+				MEMBER
+			SET
+				MEM_PW = #{MEM_PW},
+				MEM_EMAIL = #{MEM_EMAIL},
+				MEM_ZIPCODE = #{MEM_ZIPCODE},
+                MEM_ADDRESS1 = #{MEM_ADDRESS1},
+				MEM_ADDRESS2 = #{MEM_ADDRESS2},
+				MEM_PHONE = #{MEM_PHONE}
+			WHERE
+				MEM_NUM = #{MEM_NUM}
+]]>
+</update>
+
+	<update id="deleteMyInfo" parameterType="hashmap">
+        UPDATE
+            MEMBER
+         SET
+            MEM_DEL_GB = 'Y'
+         WHERE
+            MEM_NUM = #{MEM_NUM}
+</update>
+
+</mapper>
