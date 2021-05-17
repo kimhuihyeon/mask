@@ -10,7 +10,7 @@
  
 <h1> 카카오 페이로 결제하시겠습니까? </h1>
  
-<form method="post" action="/mask/kakaoPay">
+<form method="post" action="/mask/kakaoPay.mk">
     <button>결제하기</button>
 	<button>취소하기</button>
 </form>

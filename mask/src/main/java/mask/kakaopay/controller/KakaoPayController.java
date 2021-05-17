@@ -1,9 +1,9 @@
 package mask.kakaopay.controller;
 
-//import mask.common.CommandMap;
+import mask.common.CommandMap;
 import mask.kakaopay.service.KakaoPay;
 
-//import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
