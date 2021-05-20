@@ -21,7 +21,7 @@
             <input type="radio" name="check-box" id="search_1" name="search_total" onclick="search_check(1)" checked="checked">
             <!-- <input type="radio" name="check-box" id="phone"> -->
             <div class="check">
-                <label for="email">이메일</label>
+                <label for="email">email</label>
                 <!-- <label for="phone">휴대폰</label> -->
             </div>
             <div class="find_id" >
@@ -103,22 +103,34 @@ function begin(){
 
  // 아이디 값 받고 출력하는 ajax
 var idSearch_click = function(){
+	 if(!$("#MEM_NAME").val()){
+         alert("이름을 입력하세요");
+         $("#MEM_NAME").focus();
+         return false;
+      }
+
+	 if(!$("#MEM_EMAIL").val()){
+         alert("이메일을 입력하세요");
+         $("#MEM_EMAIL").focus();
+         return false;
+      }
+	 
+	var name = $("#MEM_NAME").val();
 	$.ajax({
 		type:"POST",
 		url:"${pageContext.request.contextPath}/member/openFindIdResult.mk?MEM_NAME="
-				+$('#MEM_NAME').val()+"&MEM_EMAIL="+$('#MEM_EMAIL').val(),
-				async:false,
-					
+			   +name+"&MEM_EMAIL="+$('#MEM_EMAIL').val(),				
 		success:function(data){
-			if(data == null){
+			if(data == "0"){
 				alert("회원정보가 없습니다");	
 			} else {
-				alert($('#MEM_NAME').val()+"님의 아이디는  "+data+"  입니다");
+				alert("회원님의 아이디는  " + data + "  입니다");
 			}
 
 		}
 	});
 }  
+
 
 </script>
 </html>

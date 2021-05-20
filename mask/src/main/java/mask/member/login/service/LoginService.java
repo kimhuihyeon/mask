@@ -6,7 +6,7 @@ public interface LoginService {
 
 	public Map<String, Object>selectId(Map<String, Object> map) throws Exception;//로그인
 	
-	public Map<String, Object> findId(Map<String, Object> map) throws Exception ;//아이디찾기
+	public int findId(Map<String, Object> map) throws Exception;//아이디찾기
 	
 		
 	public int findOrderNum(Map<String, Object> map) throws Exception ; //배송번호찾기
@@ -17,4 +17,8 @@ public interface LoginService {
 
 
 	public void changePW(Map<String,Object> map) throws Exception ;//비번변경
-	}
+
+	public Map<String, Object> findIdWithEmail(Map<String, Object> map) throws Exception;
+	
+	
+}

@@ -1,6 +1,7 @@
 package mask.member.login.controller;
 
 import java.util.Map;
+import java.util.Random;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -101,21 +102,41 @@ public class LoginController {
    @RequestMapping(value = "/member/findId.mk") // 아이디 찾기 폼을 보여주는 메소드
    public ModelAndView findId(CommandMap commandMap) throws Exception {
       ModelAndView mv = new ModelAndView("/member/findId");
-      
+  	  int ran = new Random().nextInt(900000) + 100000;
+	
+	  mv.addObject("random",ran);
+	 
       return mv;
    }
+   
+   /*	@RequestMapping(value = "/member/openFindIdResult.do", method = {RequestMethod.GET, RequestMethod.POST}, produces = "application/text; charset=utf8")
+
+	public @ResponseBody String findIdResult(CommandMap commandMap) throws Exception {
+		String id = String.valueOf(loginService.findId(commandMap.getMap()));
+		
+		if(id.equals("1")) {
+			String findId = (String)(loginService.findIdWithEmail(commandMap.getMap()).get("MEM_ID"));
+			System.out.println(findId);
+			return findId;
+			
+		}else {
+			return id;
+		}
+	}
+	*/
 
    //아이디찾기결과
-      @RequestMapping(value = "/member/openFindIdResult.mk", method = {RequestMethod.POST},produces = "application/text; charset=utf8")
-      @ResponseBody
-      public  String findIdResult(CommandMap paramMap) throws Exception {
-   
-            Map<String, Object> id = loginService.findId(paramMap.getMap());
-            System.out.println("아이디찾기:   "+id);
-//         if((String)id.get("ID") != null) {
-//            
-//         }
-           return (String)id.get("ID");
+      @RequestMapping(value = "/member/openFindIdResult.mk", method = {RequestMethod.GET , RequestMethod.POST}, produces = "application/text; charset=utf8")
+      public @ResponseBody
+        String findIdResult(CommandMap commandMap) throws Exception {
+    	    String id = String.valueOf(loginService.findId(commandMap.getMap()));       
+    	    if(id.equals("1")) {
+    			String findId = (String)(loginService.findIdWithEmail(commandMap.getMap()).get("MEM_ID"));
+    			System.out.println(findId);
+    			return findId;    			
+    		}else {
+    			return id;
+    		}
       }
    
    

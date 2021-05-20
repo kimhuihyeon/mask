@@ -20,10 +20,10 @@ public class LoginServiceImpl implements LoginService{
 	}
 	
 	@Override
-	public Map<String, Object> findId(Map<String, Object> map) throws Exception {
-		 return loginDAO.findId(map);
-
+	public int findId(Map<String, Object> map) throws Exception {
+		return loginDAO.findId(map);
 	}
+
 	
 	@Override
 	public String findPwEmail(Map<String, Object> map) throws Exception {
@@ -38,5 +38,10 @@ public class LoginServiceImpl implements LoginService{
 	@Override
 	public void changePW(Map<String, Object> map) throws Exception {
 		loginDAO.changePW(map);
+	}
+	
+	@Override
+	public Map<String, Object> findIdWithEmail(Map<String, Object> map) throws Exception {
+		return loginDAO.findIdWithEmail(map);
 	}
 }

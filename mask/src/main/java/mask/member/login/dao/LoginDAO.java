@@ -15,11 +15,14 @@ public class LoginDAO extends AbstractDAO {
 		return (Map<String, Object>) selectOne("login.selectId", map);
 	}
 	
-	@SuppressWarnings("unchecked")
+	/*@SuppressWarnings("unchecked")
 	public Map<String, Object> findId(Map<String, Object> map) throws Exception {//아이디찾기
 		return (Map<String, Object>) selectOne("login.findId", map);
-	}
+	}*/
 	
+	public int findId(Map<String, Object> map) throws Exception {
+		return (Integer)selectOne("login.findId", map);
+	}
 		
 	public int findOrderNum(Map<String, Object> map) throws Exception { //배송번호찾기
 		return (Integer)selectOne("login.findOrderNum", map);
@@ -33,4 +36,11 @@ public class LoginDAO extends AbstractDAO {
 	public void changePW(Map<String,Object> map) throws Exception {//비번변경
 		update("login.changePW",map);
 	}
+	
+	@SuppressWarnings("unchecked")
+	public Map<String, Object> findIdWithEmail(Map<String, Object> map) throws Exception{
+		return (Map<String, Object>) selectOne("login.findIdWithEmail", map);
+	}
+	
+
 }
