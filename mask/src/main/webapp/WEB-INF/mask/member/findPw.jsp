@@ -11,6 +11,13 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 
+  <script type="text/javascript">
+if('${message}' != ""){
+	alert('${message}');
+}
+
+</script>
+
 <script>
 function search(){
 	if((pwsearch.MEM_ID.value!=null)&&(pwsearch.MEM_EMAIL.value!=null)){
@@ -21,7 +28,9 @@ function search(){
 		alert("이메일주소를 입력하세요.")
 	}
 
-}function showMsg(m){
+}
+
+function showMsg(m){
 	
 	if(m==0){
 		
@@ -66,7 +75,8 @@ function search(){
                           <input type="email" name="MEM_EMAIL" placeholder="Email">
                           <i class="fa fas fa-envelope"></i>
                         </div>
-                        <button type="button" value="비밀번호 찾기 " onclick="search()" >확인</button>
+                        <button type="button" value="비밀번호 찾기 " 
+                        onclick="search()" >확인</button>
                       </form> 
                     </div>
 <!--                       <div class="f_phone">

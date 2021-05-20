@@ -175,8 +175,10 @@ public class LoginController {
       @Autowired
       private Email email;
        @RequestMapping("/member/openFindPwResult.mk")
-       public ModelAndView sendEmailAction (@RequestParam Map<String, Object> paramMap, ModelMap model) throws Exception {
+       public ModelAndView sendEmailAction (@RequestParam Map<String, Object> 
+       paramMap, ModelMap model) throws Exception {
            ModelAndView mav;
+           
            String id=(String) paramMap.get("MEM_ID");
            String e_mail=(String) paramMap.get("MEM_EMAIL");
            String pw= loginService.findPwEmail(paramMap);
@@ -187,14 +189,18 @@ public class LoginController {
                email.setReceiver(e_mail);
                email.setSubject(id+"님 비밀번호 찾기 메일입니다.");
                emailSender.SendEmail(email);
-               mav= new ModelAndView("redirect:/member/findId.mk");
+               mav= new ModelAndView("redirect:/member/findPw.mk");
+               mav.setViewName("/member/findPw");
+               mav.addObject("message", "이메일 발송이 완료 되었습니다.");
                return mav;
            }else {
-               mav=new ModelAndView("redirect:/member/findId.mk");
+               mav=new ModelAndView("redirect:/member/findPw.mk");
+               mav.setViewName("/member/findPw");
+               mav.addObject("message", "아이디 및 비밀번호를 확인해 주세요.");
                return mav;
            }
        }
-      // 찾기 부분 유효성검사
+      /* 찾기 부분 유효성검사
 
       @RequestMapping(value = "/board.mk") 
       public ModelAndView board(CommandMap commandMap) throws Exception {
@@ -202,4 +208,5 @@ public class LoginController {
          
          return mv;
       }
-}
+*/
+       }
