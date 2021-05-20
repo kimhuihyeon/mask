@@ -37,7 +37,6 @@ public class LoginController {
       
       System.out.println("session : " + session.getAttribute("session_MEMBER"));
       
-      
       /*
        * if(session.getAttribute("session_MEMBER")!=null) { ModelAndView mv = new
        * ModelAndView(); mv.setViewName("redirect:/main/openMainList.mk"); return mv;
@@ -48,7 +47,6 @@ public class LoginController {
          return mv;
       }
 //   }
-
    @RequestMapping(value = "/member/login.mk", method = {RequestMethod.GET, RequestMethod.POST})
    public ModelAndView login(CommandMap commandMap, HttpServletRequest request) throws Exception {
       ModelAndView mv = new ModelAndView("/member/LoginCheck");
@@ -60,16 +58,22 @@ public class LoginController {
       //아이디 확인문
       Map<String, Object> chk = loginService.selectId(commandMap.getMap());
       if (chk==null) { // 아이디가 있는지 없는지를 확인
-         message = "해당 아이디가 존재하지 않습니다.";
+    	     mv.setViewName("/member/Login");
+	         mv.addObject("message", "해당 아이디가 없습니다.");
+	         return mv;
+	       
       } else {
          if (chk.get("MEM_PW").equals(commandMap.get("MEM_PW"))) {
             session.setAttribute("session_MEM_ID", commandMap.get("MEM_ID"));
             session.setAttribute("session_MEM_NUM",chk.get("MEM_NUM"));
             session.setAttribute("session_MEMBER", chk);
          } else { // if문을 통해 sql과 정보 일치 확인
-            message = "비밀번호가 맞지 않습니다.";
-         }
+          	mv.setViewName("/member/Login");
+            mv.addObject("message", "비밀번호를 확인해 주세요.");
+            return mv;   
+            }
       }
+      
       System.out.println("아이디확인"+chk);
       mv.addObject("message",message);
       mv.addObject("url",url);
