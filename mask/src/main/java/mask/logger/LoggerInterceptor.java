@@ -2,6 +2,7 @@ package mask.logger;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -13,19 +14,20 @@ public class LoggerInterceptor extends HandlerInterceptorAdapter{
 	protected Log log = LogFactory.getLog(LoggerInterceptor.class);
 	
 	
-  /*preHandle ¸Þ¼­µå¿Í postHandle ¸Þ¼­µå¸¦ ÀÌ¿ëÇØ ÀüÃ³¸®±â ¹× ÈÄÃ³¸®±â 
-	preHandleÀÇ °æ¿ì ÄÁÆ®·Ñ·¯°¡ È£ÃâµÇ±â Àü¿¡ ½ÇÇà!
-	postHandleÀÇ °æ¿ì ÄÁÆ®·Ñ·¯°¡ È£ÃâµÈ ÈÄ ½ÇÇà!*/
+  /*preHandle ï¿½Þ¼ï¿½ï¿½ï¿½ï¿½ postHandle ï¿½Þ¼ï¿½ï¿½å¸¦ ï¿½Ì¿ï¿½ï¿½ï¿½ ï¿½ï¿½Ã³ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½Ã³ï¿½ï¿½ï¿½ï¿½ 
+	preHandleï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½Æ®ï¿½Ñ·ï¿½ï¿½ï¿½ È£ï¿½ï¿½Ç±ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½!
+	postHandleï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½Æ®ï¿½Ñ·ï¿½ï¿½ï¿½ È£ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½!*/
 	
 //START - END
 	
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response,
 			Object handler) throws Exception { 
-		if(log.isDebugEnabled()) { 
+	 if(log.isDebugEnabled()) { 
 			log.debug("======================================          START         ======================================");
 			log.debug(" Request URI \t: " + request.getRequestURI());
 		}
+		 
 		return super.preHandle(request, response, handler);
 		
 	}
@@ -42,6 +44,8 @@ public class LoggerInterceptor extends HandlerInterceptorAdapter{
 		
 		
 	}
+	
+	
 	
 	
 

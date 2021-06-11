@@ -4,6 +4,12 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>  
 
+ <script type="text/javascript">
+if('${message}' != ""){
+	alert('${message}');
+}
+
+</script>
 <c:set var='root' value="${pageContext.request.contextPath }/"/>
 <c:import url="/WEB-INF/mask/layout/header.jsp"/>
 <html lang="en">

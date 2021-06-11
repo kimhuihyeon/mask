@@ -127,7 +127,15 @@ M.MEM_ADDRESS2
       ]]>
    </select>
    
-
+	<!-- 상품 수량 수정(빼기) -->
+	<update id="goodsCountDown" parameterType="java.lang.Integer">
+		<![CDATA[
+        	UPDATE GOODS_ATTRIBUTE
+        	SET GOODS_AMOUNT = GOODS_AMOUNT - #{ORDER_AMOUNT}, 
+        		GOODS_SELLCOUNT = GOODS_SELLCOUNT + #{ORDER_AMOUNT}
+         	WHERE GOODS_KIND_NUMBER = #{GOODS_KIND_NUMBER}
+      	]]>
+	</update>
 
 
 
